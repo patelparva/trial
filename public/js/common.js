@@ -31,6 +31,8 @@ get_data = async () => {
         board_data[data.id] = data.data();
 
         f_data[data.id] = data.data();
+
+        // console.log(data.data())
       });
 
       handle_loader();
