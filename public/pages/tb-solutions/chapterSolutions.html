@@ -563,10 +563,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="/about-us">About</a>
               </li>
-              <li class="nav-item active dropdown main-dropdown">
+              <li class="nav-item dropdown main-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="outside"
@@ -676,15 +675,38 @@
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="btn-group dropend w-100 main-dropend">
+                      <button
+                        type="button"
+                        class="btn btn-light dropdown-toggle text-start"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Textbook's PDF
+                      </button>
+
+                      <ul class="dropdown-menu main-dropend-menu">
+                        <li>
+                          <a class="dropdown-item" href="/tb-pdf/gseb/">GSEB</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="/tb-pdf/ncert/"
+                            >NCERT</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Practice Papers</a>
+                <a class="nav-link" href="/practice-papers">Practice Papers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="/blogs">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faqs">FAQ's</a>
               </li>
             </ul>
 
@@ -820,6 +842,12 @@
         );
 
         function get_ch_name(ch_no) {
+          console.log(
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]]["chapter" + ch_no]["name"]
+          );
+
           return data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-")[1]
           ][path_url[4]]["chapter" + ch_no]["name"]
@@ -841,7 +869,7 @@
           console.log(error);
         }
 
-        console.log();
+        // console.log();
 
         try {
           next_chapter_button.setAttribute(
@@ -860,9 +888,16 @@
           data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-").pop()
           ][path_url[4]]
-        ).length;
+        );
 
-        for (let i = 0; i < chapter_nos; i++) {
+        var index = chapter_nos.indexOf("book_name");
+        if (index !== -1) {
+          chapter_nos.splice(index, 1);
+        }
+
+        // console.log("Ch" + chapter_nos.length);
+
+        for (let i = 0; i < chapter_nos.length; i++) {
           if (path_url[5].split("-")[1] != i + 1) {
             document.querySelector(
               ".chapter-list"

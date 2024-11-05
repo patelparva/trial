@@ -26,6 +26,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../../../styles/common.css" />
+
+    <style>
+      .content * {
+        color: var(--basic-f-color);
+        background-color: var(--light-c-2) !important;
+      }
+
+      .content,
+      .main-container main {
+        background-color: var(--light-c-2) !important;
+      }
+
+      .main-container h6 a {
+        color: var(--dark-c-2);
+      }
+
+      .main-container {
+        background-color: var(--light-c-1);
+      }
+    </style>
   </head>
   <body>
     <header class="fixed-top autohide">
@@ -51,7 +71,7 @@
           >
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/about-us">About</a>
@@ -59,7 +79,6 @@
               <li class="nav-item dropdown main-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="outside"
@@ -169,15 +188,38 @@
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="btn-group dropend w-100 main-dropend">
+                      <button
+                        type="button"
+                        class="btn btn-light dropdown-toggle text-start"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Textbook's PDF
+                      </button>
+
+                      <ul class="dropdown-menu main-dropend-menu">
+                        <li>
+                          <a class="dropdown-item" href="/tb-pdf/gseb/">GSEB</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="/tb-pdf/ncert/"
+                            >NCERT</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Practice Papers</a>
+                <a class="nav-link" href="/practice-papers">Practice Papers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="/blogs">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faqs">FAQ's</a>
               </li>
             </ul>
 
@@ -263,21 +305,68 @@
     <script>
       let path_url = location.pathname.split("/");
 
-      // h1 writing
-      document.querySelector(
-        "main h1"
-      ).innerHTML += `${path_url[2].toUpperCase()} Textbook Solutions For Class ${
-        path_url[3].split("class-").pop() +
-        " " +
-        capitalizeFirstLetter(path_url[4])
-      }`;
-
       async function write_content() {
         var data = await get_data();
         const content_div = document.querySelector(".content");
 
         // console.log(path_url[2]);
         // console.log(data["GSEB"]["grade" + path_url[2].split("class")[1]]);
+
+        // h1 writing
+        if (
+          data[path_url[2].toUpperCase()][
+            "grade" + path_url[3].split("class-")[1]
+          ][path_url[4]].book_name
+        ) {
+          document.querySelector(
+            "main h1"
+          ).innerHTML += `${path_url[2].toUpperCase()} Textbook Solutions For Class ${
+            path_url[3].split("class-").pop() + " "
+          } <br> ${capitalizeFirstLetter(path_url[4])} : ${
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]].book_name
+          }`;
+        } else {
+          document.querySelector(
+            "main h1"
+          ).innerHTML += `${path_url[2].toUpperCase()} Textbook Solutions For Class ${
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4])
+          }`;
+        }
+
+        // H6 Navigator e.g. >Board>Class>Subject>Chapter
+        if (
+          data[path_url[2].toUpperCase()][
+            "grade" + path_url[3].split("class-")[1]
+          ][path_url[4]].book_name
+        ) {
+          document.querySelector(
+            ".main-container h6"
+          ).innerHTML += `<p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover" href="/tb-solutions">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
+            path_url[2]
+          }">${path_url[2].toUpperCase()}</a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
+            path_url[2] + "/" + path_url[3]
+          }">Class ${path_url[3]
+            .split("class-")
+            .pop()}</a> > ${capitalizeFirstLetter(path_url[4])} : ${
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]].book_name
+          }</p>`;
+        } else {
+          document.querySelector(
+            ".main-container h6"
+          ).innerHTML += `<p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover" href="/tb-solutions">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
+            path_url[2]
+          }">${path_url[2].toUpperCase()}</a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
+            path_url[2] + "/" + path_url[3]
+          }">Class ${path_url[3]
+            .split("class-")
+            .pop()}</a> > ${capitalizeFirstLetter(path_url[4])}</p>`;
+        }
 
         try {
           data[path_url[2].toUpperCase()][
@@ -302,14 +391,16 @@
         for (var temp_data in data[path_url[2].toUpperCase()][
           "grade" + path_url[3].split("class-")[1]
         ][path_url[4]]) {
-          new_data.push(temp_data);
+          if (temp_data != "book_name") {
+            new_data.push(temp_data);
+          }
         }
 
         new_data.sort(function (a, b) {
           return a.split("r")[1] - b.split("r")[1];
         });
 
-        console.log(new_data[0].split("r")[1]);
+        console.log(new_data);
 
         for (let i = 0; i < new_data.length; i++) {
           // console.log(new_data[i]);
@@ -325,9 +416,7 @@
             .toLowerCase()
             .replace(/ /g, "-");
 
-          // console.log(ch_name);
-
-          content_div.innerHTML += `<a href="${
+          content_div.innerHTML += `<a style="color:var(--dark-c-2)" href="${
             "/tb-solutions/" +
             path_url[2] +
             "/" +
@@ -339,8 +428,15 @@
             "-" +
             ch_name
           }"><h5>${capitalizeFirstLetter(
-            "Chapter " + new_data[i].split("chapter").pop()
+            "Chapter " +
+              new_data[i].split("chapter").pop() +
+              " : " +
+              data[path_url[2].toUpperCase()][
+                "grade" + path_url[3].split("class-")[1]
+              ][path_url[4]][new_data[i]].name
           )}<h5><a>`;
+
+          // console.log(ch_name);
         }
       }
 

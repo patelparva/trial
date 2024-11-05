@@ -27,6 +27,26 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../../styles/common.css" />
+
+    <style>
+      .content * {
+        color: var(--basic-f-color);
+        background-color: var(--light-c-2) !important;
+      }
+
+      .content,
+      .main-container main {
+        background-color: var(--light-c-2) !important;
+      }
+
+      .main-container h6 a {
+        color: var(--dark-c-2);
+      }
+
+      .main-container {
+        background-color: var(--light-c-1);
+      }
+    </style>
   </head>
   <body>
     <header class="fixed-top autohide">
@@ -52,7 +72,7 @@
           >
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/about-us">About</a>
@@ -60,7 +80,6 @@
               <li class="nav-item dropdown main-dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="outside"
@@ -170,15 +189,38 @@
                   </li>
                   <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="btn-group dropend w-100 main-dropend">
+                      <button
+                        type="button"
+                        class="btn btn-light dropdown-toggle text-start"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Textbook's PDF
+                      </button>
+
+                      <ul class="dropdown-menu main-dropend-menu">
+                        <li>
+                          <a class="dropdown-item" href="/tb-pdf/gseb/">GSEB</a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item" href="/tb-pdf/ncert/"
+                            >NCERT</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Practice Papers</a>
+                <a class="nav-link" href="/practice-papers">Practice Papers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="/blogs">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faqs">FAQ's</a>
               </li>
             </ul>
 
@@ -227,8 +269,20 @@
       </nav>
     </header>
 
-    <div class="main-container d-none">
-      <div class="content"></div>
+    <div class="main-container p-3 row justify-content-around d-none">
+      <h6 class="p-2 px-lg-5 px-md-4 pb-3"></h6>
+      <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
+        <div class="content">
+          <h1 style="color: var(--dark-c-2)" class="text-center mb-4"></h1>
+        </div>
+      </main>
+      <aside
+        style="background-color: var(--light-c-2)"
+        class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3"
+      >
+        <h1>Ads here</h1>
+        <div class="chapter-list"></div>
+      </aside>
     </div>
 
     <div
@@ -256,6 +310,14 @@
         var data = await get_data();
         const content_div = document.querySelector(".content");
 
+        // h1 writing
+        document.querySelector(
+          "main h1"
+        ).innerHTML += `${path_url[2].toUpperCase()} Textbook Solutions For Class ${path_url[3]
+          .split("class-")
+          .pop()}
+        `;
+
         display_404(
           data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-").pop()
@@ -277,13 +339,36 @@
             "grade" + path_url[3].split("class-").pop()
           ]
         )) {
+          if (
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-").pop()
+            ][id].book_name
+          ) {
+            content_div.innerHTML += `<a href="${
+              "/tb-solutions/" + path_url[2] + "/" + path_url[3] + "/" + id
+            }"><h5>${capitalizeFirstLetter(id)} : ${
+              data[path_url[2].toUpperCase()][
+                "grade" + path_url[3].split("class-").pop()
+              ][id].book_name
+            }<h5><a>`;
+          } else {
+            content_div.innerHTML += `<a href="${
+              "/tb-solutions/" + path_url[2] + "/" + path_url[3] + "/" + id
+            }"><h5>${capitalizeFirstLetter(id)}<h5><a>`;
+          }
+
           // console.log(id, value);
-          content_div.innerHTML += `<a href="${
-            "/tb-solutions/" + path_url[2] + "/" + path_url[3] + "/" + id
-          }"><h5>${capitalizeFirstLetter(id)}<h5><a>`;
         }
 
-        // console.log(data);
+        // H6 Navigator e.g. >Board>Class>Subject>Chapter
+
+        document.querySelector(
+          ".main-container h6"
+        ).innerHTML += `<p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover" href="/tb-solutions">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
+          path_url[2]
+        }">${path_url[2].toUpperCase()}</a> > Class ${path_url[3]
+          .split("class-")
+          .pop()}</p>`;
       }
 
       write_content();

@@ -73,11 +73,11 @@ display_404 = (arg) => {
     arg;
   } catch {
     document.querySelector(".pnf-section").classList.remove("d-none");
-    document.querySelector(".content").classList.add("d-none");
+    document.querySelector(".main-container").classList.add("d-none");
   }
 
   if (!arg) {
     document.querySelector(".pnf-section").classList.remove("d-none");
-    document.querySelector(".content").classList.add("d-none");
+    document.querySelector(".main-container").classList.add("d-none");
   }
 };
