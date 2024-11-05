@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8RQKCJR9GG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8RQKCJR9GG");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -212,8 +226,20 @@
       </nav>
     </header>
 
-    <div class="main-container d-none">
-      <div class="content"><h1>Class 6</h1></div>
+    <div class="main-container p-3 row justify-content-around d-none">
+      <h6 class="p-2 px-lg-5 px-md-4 pb-3"></h6>
+      <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
+        <div class="content">
+          <h1 style="color: var(--dark-c-2)" class="text-center mb-4"></h1>
+        </div>
+      </main>
+      <aside
+        style="background-color: var(--light-c-2)"
+        class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3"
+      >
+        <h1>Ads here</h1>
+        <div class="chapter-list"></div>
+      </aside>
     </div>
 
     <div
@@ -236,6 +262,15 @@
     <script src="../../../../js/common.js"></script>
     <script>
       let path_url = location.pathname.split("/");
+
+      // h1 writing
+      document.querySelector(
+        "main h1"
+      ).innerHTML += `${path_url[2].toUpperCase()} Textbook Solutions For Class ${
+        path_url[3].split("class-").pop() +
+        " " +
+        capitalizeFirstLetter(path_url[4])
+      }`;
 
       async function write_content() {
         var data = await get_data();
@@ -270,16 +305,19 @@
           new_data.push(temp_data);
         }
 
-        new_data.sort();
-        console.log();
+        new_data.sort(function (a, b) {
+          return a.split("r")[1] - b.split("r")[1];
+        });
+
+        console.log(new_data[0].split("r")[1]);
 
         for (let i = 0; i < new_data.length; i++) {
-          console.log(new_data[i]);
-          console.log(
-            data[path_url[2].toUpperCase()][
-              "grade" + path_url[3].split("class-")[1]
-            ][path_url[4]][new_data[i]]
-          );
+          // console.log(new_data[i]);
+          // console.log(
+          //   data[path_url[2].toUpperCase()][
+          //     "grade" + path_url[3].split("class-")[1]
+          //   ][path_url[4]][new_data[i]]
+          // );
 
           var ch_name = data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-")[1]
@@ -287,7 +325,7 @@
             .toLowerCase()
             .replace(/ /g, "-");
 
-          console.log(ch_name);
+          // console.log(ch_name);
 
           content_div.innerHTML += `<a href="${
             "/tb-solutions/" +
@@ -304,8 +342,6 @@
             "Chapter " + new_data[i].split("chapter").pop()
           )}<h5><a>`;
         }
-
-        // console.log(data);
       }
 
       write_content();

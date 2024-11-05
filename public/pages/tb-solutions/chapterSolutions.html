@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8RQKCJR9GG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8RQKCJR9GG");
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -31,7 +46,7 @@
 
       table td {
         border: solid;
-        border-color: gray;
+        border-color: var(--dark-c-1);
         border-style: double;
       }
 
@@ -254,7 +269,7 @@
         margin: 5px auto;
         display: block;
         float: none;
-        vertical-align: ;
+        /* vertical-align: ; */
       }
       .fr-view img.fr-dib.fr-fil {
         margin-left: 0;
@@ -499,6 +514,24 @@
       p[data-f-id="pbf"] {
         display: none !important;
       }
+
+      .content * {
+        color: var(--basic-f-color);
+        background-color: var(--light-c-2) !important;
+      }
+
+      .content,
+      .main-container main {
+        background-color: var(--light-c-2) !important;
+      }
+
+      .main-container h6 a {
+        color: var(--dark-c-2);
+      }
+
+      .main-container {
+        background-color: var(--light-c-1);
+      }
     </style>
   </head>
   <body>
@@ -704,13 +737,20 @@
       <h6 class="p-2 px-lg-5 px-md-4 pb-3"></h6>
       <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
         <div class="content">
-          <h1 class="text-center mb-4"></h1>
+          <h1 style="color: var(--dark-c-2)" class="text-center mb-4"></h1>
         </div>
         <div class="page-slider">
           <nav>
             <ul class="pagination justify-content-center">
               <li class="page-item">
-                <a class="page-link previous-chapter-button" href=""
+                <a
+                  style="
+                    color: var(--dark-c-2);
+                    background-color: var(--dark-c-1);
+                    font-weight: bold;
+                  "
+                  class="page-link previous-chapter-button"
+                  href=""
                   ><i
                     class="fa-solid fa-arrow-left"
                     style="padding-right: 5px"
@@ -719,7 +759,14 @@
                 >
               </li>
               <li class="page-item">
-                <a class="page-link next-chapter-button" href=""
+                <a
+                  style="
+                    color: var(--dark-c-2);
+                    background-color: var(--dark-c-1);
+                    font-weight: bold;
+                  "
+                  class="page-link next-chapter-button"
+                  href=""
                   >Next Chapter<i
                     class="fa-solid fa-arrow-right"
                     style="padding-left: 5px"
@@ -730,7 +777,10 @@
           </nav>
         </div>
       </main>
-      <aside class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3">
+      <aside
+        style="background-color: var(--light-c-2)"
+        class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3"
+      >
         <h1>Ads here</h1>
         <div class="chapter-list"></div>
       </aside>
@@ -813,13 +863,13 @@
         ).length;
 
         for (let i = 0; i < chapter_nos; i++) {
-          if (path_url[5].split("")[3] != i + 1) {
+          if (path_url[5].split("-")[1] != i + 1) {
             document.querySelector(
               ".chapter-list"
-            ).innerHTML += `<li style="text-decoration: none; list-style: none;">
-            <a href="${"./ch-" + (i + 1) + "-" + get_ch_name(i + 1)}">Chapter ${
-              i + 1
-            }: ${
+            ).innerHTML += `<li style="text-decoration: none; list-style: none; ">
+            <a style="text-decoration: none; color: var(--dark-c-2);" href="${
+              "./ch-" + (i + 1) + "-" + get_ch_name(i + 1)
+            }">Chapter ${i + 1}: ${
               data[path_url[2].toUpperCase()][
                 "grade" + path_url[3].split("class-")[1]
               ][path_url[4]]["chapter" + (i + 1).toString()]["name"]
@@ -862,7 +912,7 @@
           path_url[3].split("class-").pop() +
           " " +
           capitalizeFirstLetter(path_url[4])
-        }<br> Chapter ${path_url[5].split("")[3]}: ${
+        }<br> Chapter ${path_url[5].split("-")[1]}: ${
           data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-")[1]
           ][path_url[4]]["chapter" + path_url[5].split("-")[1]]["name"]
@@ -875,9 +925,10 @@
         }`;
         // }
 
+        // H6 Navigator e.g. >Board>Class>Subject>Chapter
         document.querySelector(
           ".main-container h6"
-        ).innerHTML += `<a class="link-underline-opacity-0-hover" href="/tb-solutions">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
+        ).innerHTML += `<p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover" href="/tb-solutions">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
           path_url[2]
         }">${path_url[2].toUpperCase()}</a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
           path_url[2] + "/" + path_url[3]
@@ -886,12 +937,12 @@
           .pop()}</a> > <a class="link-underline-opacity-0-hover" href="/tb-solutions/${
           path_url[2] + "/" + path_url[3] + "/" + path_url[4]
         }">${capitalizeFirstLetter(path_url[4])}</a> > Chapter ${
-          path_url[5].split("")[3]
+          path_url[5].split("-")[1]
         } : ${
           data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-")[1]
           ][path_url[4]]["chapter" + path_url[5].split("-")[1]]["name"]
-        }`;
+        }</p>`;
 
         // Trial
         const strongTags = document.getElementsByTagName("strong");
@@ -908,7 +959,7 @@
           // console.log(strongTags[i].style);
 
           if (strongTags[i].textContent == searchText) {
-            strongTags[i].style.color = "blue";
+            strongTags[i].style.color = "var(--dark-c-2)";
           }
         }
       }

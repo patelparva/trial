@@ -1,5 +1,11 @@
 :root {
   --content-background: #ffffff;
+
+  --light-c-1: #f3f3e0;
+  --light-c-2: #cbdceb;
+  --dark-c-1: #608bc1;
+  --dark-c-2: #133e87;
+  --basic-f-color: #001f3f;
 }
 
 * {
