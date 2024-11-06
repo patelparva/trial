@@ -3,7 +3,7 @@
 }
 
 .hero-section {
-  background-color: rgb(34, 34, 34);
+  background-color: var(--dark-c-2);
   text-decoration-style: none;
   color: white;
   padding: 10%;

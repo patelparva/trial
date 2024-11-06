@@ -1,11 +1,18 @@
 :root {
   --content-background: #ffffff;
 
-  --light-c-1: #f3f3e0;
+  /* --light-c-1: #f3f3e0;
   --light-c-2: #cbdceb;
   --dark-c-1: #608bc1;
   --dark-c-2: #133e87;
   --basic-f-color: #001f3f;
+   */
+  --light-c-1: #b1bdb9;
+  --light-c-2: #cccccc;
+  --dark-c-1: #c2b4a9;
+  --dark-c-2: #302f2e;
+  --basic-f-color: #001f3f;
+  --color-4: #3a4e63;
 }
 
 * {
@@ -14,6 +21,10 @@
   margin: 0;
   padding: 0;
   /* box-sizing: border-box; */
+}
+
+header > nav {
+  background-color: var(--color-4) !important;
 }
 
 a {
