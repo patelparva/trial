@@ -24,7 +24,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title></title>
 
     <link rel="stylesheet" href="/styles/common.css" />
 
@@ -1023,11 +1023,11 @@
         );
 
         function get_ch_name(ch_no) {
-          console.log(
-            data[path_url[2].toUpperCase()][
-              "grade" + path_url[3].split("class-")[1]
-            ][path_url[4]]["chapter" + ch_no]["name"]
-          );
+          // console.log(
+          //   data[path_url[2].toUpperCase()][
+          //     "grade" + path_url[3].split("class-")[1]
+          //   ][path_url[4]]["chapter" + ch_no]["name"]
+          // );
 
           return data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-")[1]
@@ -1037,7 +1037,7 @@
         }
 
         // Title
-
+        document.head.appendChild(document.createElement("title"));
         document.querySelector("title").textContent =
           path_url[2].toUpperCase() +
           " Textbook Solutions For Class " +
@@ -1047,7 +1047,84 @@
           " Chapter " +
           path_url[5].split("-")[1];
 
-        // console.log(get_ch_name(path_url[5].split("-")[1] - 1));
+        // Tags Start
+        const metaKeywords = [];
+
+        metaKeywords.push(
+          "BookEscape " +
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " Chapter " +
+            path_url[5].split("-")[1],
+
+          path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " Chapter " +
+            path_url[5].split("-")[1],
+
+          "NCERT Class " + path_url[3].split("class-").pop(),
+
+          "NCERT Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]),
+
+          "NCERT Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " Chapter " +
+            path_url[5].split("-")[1],
+
+          "Class " + path_url[3].split("class-").pop(),
+
+          "Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]),
+
+          "Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " Chapter " +
+            path_url[5].split("-")[1],
+
+          data[path_url[2].toUpperCase()][
+            "grade" + path_url[3].split("class-")[1]
+          ][path_url[4]]["chapter" + path_url[5].split("-")[1]]["name"],
+
+          "Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]]["chapter" + path_url[5].split("-")[1]]["name"],
+
+          capitalizeFirstLetter(path_url[4]) +
+            " " +
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]]["chapter" + path_url[5].split("-")[1]]["name"]
+        );
+
+        // Create a meta tag element.
+        const metaKeywordsElement = document.createElement("meta");
+
+        // Set the meta tag's name and content attributes.
+        metaKeywordsElement.name = "keywords";
+        metaKeywordsElement.content = metaKeywords.join(", ");
+
+        // Add the meta tag element to the document's head.
+        document.head.appendChild(metaKeywordsElement);
+
+        // Tags End
 
         try {
           previous_chapter_button.setAttribute(
@@ -1192,18 +1269,6 @@
       }
 
       write_content();
-
-      const metaKeywords = [];
-
-      // Create a meta tag element.
-      const metaKeywordsElement = document.createElement("meta");
-
-      // Set the meta tag's name and content attributes.
-      metaKeywordsElement.name = "keywords";
-      metaKeywordsElement.content = metaKeywords.join(", ");
-
-      // Add the meta tag element to the document's head.
-      document.head.appendChild(metaKeywordsElement);
     </script>
 
     <script

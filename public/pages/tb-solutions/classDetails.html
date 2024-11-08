@@ -24,7 +24,6 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -491,6 +490,43 @@
         var data = await get_data();
         const content_div = document.querySelector(".content");
 
+        // Title
+        document.head.appendChild(document.createElement("title"));
+        document.querySelector("title").textContent =
+          path_url[2].toUpperCase() +
+          " Textbook Solutions For Class " +
+          path_url[3].split("class-").pop();
+
+        // Tags Start
+        const metaKeywords = [];
+
+        metaKeywords.push(
+          "BookEscape " +
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop(),
+
+          path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop(),
+
+          "NCERT Class " + path_url[3].split("class-").pop(),
+
+          "Class " + path_url[3].split("class-").pop()
+        );
+
+        // Create a meta tag element.
+        const metaKeywordsElement = document.createElement("meta");
+
+        // Set the meta tag's name and content attributes.
+        metaKeywordsElement.name = "keywords";
+        metaKeywordsElement.content = metaKeywords.join(", ");
+
+        // Add the meta tag element to the document's head.
+        document.head.appendChild(metaKeywordsElement);
+
+        // Tags End
+
         // h1 writing
         document.querySelector(
           "main h1"
@@ -500,12 +536,6 @@
         `;
 
         display_404(
-          data[path_url[2].toUpperCase()][
-            "grade" + path_url[3].split("class-").pop()
-          ]
-        );
-
-        console.log(
           data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-").pop()
           ]
@@ -537,8 +567,6 @@
               "/tb-solutions/" + path_url[2] + "/" + path_url[3] + "/" + id
             }"><h5>${capitalizeFirstLetter(id)}<h5><a>`;
           }
-
-          // console.log(id, value);
         }
 
         // H6 Navigator e.g. >Board>Class>Subject>Chapter

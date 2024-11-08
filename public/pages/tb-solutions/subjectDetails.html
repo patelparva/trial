@@ -24,7 +24,6 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -494,6 +493,54 @@
         // console.log(path_url[2]);
         // console.log(data["GSEB"]["grade" + path_url[2].split("class")[1]]);
 
+        // Title
+        document.head.appendChild(document.createElement("title"));
+        document.querySelector("title").textContent =
+          path_url[2].toUpperCase() +
+          " Textbook Solutions For Class " +
+          path_url[3].split("class-").pop() +
+          " " +
+          capitalizeFirstLetter(path_url[4]);
+
+        // Tags Start
+        const metaKeywords = [];
+
+        metaKeywords.push(
+          "BookEscape " +
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]),
+
+          path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]),
+
+          "NCERT Class " + path_url[3].split("class-").pop(),
+
+          "Class " + path_url[3].split("class-").pop(),
+
+          "Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4])
+        );
+
+        // Create a meta tag element.
+        const metaKeywordsElement = document.createElement("meta");
+
+        // Set the meta tag's name and content attributes.
+        metaKeywordsElement.name = "keywords";
+        metaKeywordsElement.content = metaKeywords.join(", ");
+
+        // Add the meta tag element to the document's head.
+        document.head.appendChild(metaKeywordsElement);
+
+        // Tags End
+
         // h1 writing
         if (
           data[path_url[2].toUpperCase()][
@@ -581,8 +628,6 @@
         new_data.sort(function (a, b) {
           return a.split("r")[1] - b.split("r")[1];
         });
-
-        console.log(new_data);
 
         for (let i = 0; i < new_data.length; i++) {
           // console.log(new_data[i]);
