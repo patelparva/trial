@@ -1036,6 +1036,17 @@
             .replace(/ /g, "-");
         }
 
+        // Title
+
+        document.querySelector("title").textContent =
+          path_url[2].toUpperCase() +
+          " Textbook Solutions For Class " +
+          path_url[3].split("class-").pop() +
+          " " +
+          capitalizeFirstLetter(path_url[4]) +
+          " Chapter " +
+          path_url[5].split("-")[1];
+
         // console.log(get_ch_name(path_url[5].split("-")[1] - 1));
 
         try {
