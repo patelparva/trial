@@ -64,6 +64,11 @@ app.get("/faqs", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/faq.html"));
 });
 
+// Sitemap
+app.get("/sitemap", (req, res) => {
+  res.sendFile(path.join(__dirname, "sitemap.txt"));
+});
+
 // 404 page
 app.use((req, res) => {
   res.sendFile(path.join(initial_path, "pages/404-page.html"));
@@ -72,4 +77,3 @@ app.use((req, res) => {
 app.listen(3000, () => {
   console.log("listening......");
 });
-
