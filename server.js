@@ -69,6 +69,10 @@ app.get("/sitemap", (req, res) => {
   res.sendFile(path.join(__dirname, "sitemap.txt"));
 });
 
+app.get("/sitemap-xml", (req, res) => {
+  res.sendFile(path.join(__dirname, "sitemap.xml"));
+});
+
 // 404 page
 app.use((req, res) => {
   res.sendFile(path.join(initial_path, "pages/404-page.html"));
