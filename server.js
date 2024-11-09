@@ -64,6 +64,16 @@ app.get("/faqs", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/faq.html"));
 });
 
+// Privacy Policy
+app.get("/privacy-policy", (req, res) => {
+  res.sendFile(path.join(initial_path, "pages/privacy-policy.html"));
+});
+
+// T&C's
+app.get("/terms-and-conditions", (req, res) => {
+  res.sendFile(path.join(initial_path, "pages/terms-and-conditions.html"));
+});
+
 // Sitemap
 app.get("/sitemap", (req, res) => {
   res.sendFile(path.join(__dirname, "sitemap.txt"));
