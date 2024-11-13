@@ -10,8 +10,14 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/home.html"));
 });
 
+// About
 app.get("/about-us", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/about.html"));
+});
+
+// Contact
+app.get("/contact-us", (req, res) => {
+  res.sendFile(path.join(initial_path, "pages/contact.html"));
 });
 
 // Textbook Solutions Starts
@@ -57,11 +63,6 @@ app.get("/practice-papers", (req, res) => {
 // Blogs
 app.get("/blogs", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/blogs/main.html"));
-});
-
-// FAQ's
-app.get("/faqs", (req, res) => {
-  res.sendFile(path.join(initial_path, "pages/faq.html"));
 });
 
 // Privacy Policy

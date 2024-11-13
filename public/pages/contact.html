@@ -24,9 +24,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookEscape: Terms and Conditions</title>
-
-    <link rel="stylesheet" href="/styles/common.css" />
+    <title>Contact Us</title>
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -34,7 +32,6 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -42,6 +39,9 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <link rel="stylesheet" href="/styles/common.css" />
+    <link rel="stylesheet" href="/styles/about.css" />
 
     <style>
       .content * {
@@ -52,6 +52,10 @@
       .content,
       .main-container main {
         background-color: var(--light-c-2) !important;
+      }
+
+      .main-container h6 a {
+        color: var(--dark-c-2);
       }
 
       .main-container {
@@ -235,7 +239,7 @@
                 <a class="nav-link" href="/blogs">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contact-us">Contact</a>
+                <a class="nav-link active" href="/contact-us">Contact</a>
               </li>
             </ul>
 
@@ -285,104 +289,80 @@
     </header>
 
     <div class="main-container p-3 row justify-content-around">
-      <main class="shadow p-3 p-md-5 p-lg-5 px-md-5 col-lg-8">
-        <div class="main-conatiner px-lg-5 px-md-5">
-          <h1>Terms and Conditions for BookEscape</h1>
+      <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <h1 class="text-center mb-4">Contact Us</h1>
+              <form
+                class="row g-2 g-sm-1 needs-validation justify-content-center"
+                novalidate
+              >
+                <div class="col-md-8">
+                  <label for="validationCustom01" class="form-label"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control name-input"
+                    id="validationCustom01"
+                    required
+                  />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">We need your Name, Please!</div>
+                </div>
 
-          <h2>1. Acceptance of Terms</h2>
+                <div class="col-md-8">
+                  <label for="validationCustomEmail" class="form-label"
+                    >Email</label
+                  >
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend"
+                      ><i class="fa-regular fa-envelope"></i>
+                    </span>
+                    <input
+                      type="email"
+                      class="form-control email-input"
+                      id="validationCustomEmail"
+                      aria-describedby="inputGroupPrepend"
+                      required
+                    />
+                    <div class="invalid-feedback">
+                      Kindly submit your email.
+                    </div>
+                  </div>
+                </div>
 
-          <p>
-            By accessing and using the BookEscape website, you agree to be bound
-            by these Terms and Conditions. If you disagree with any part of
-            these terms, please do not use our website.
-          </p>
-
-          <h2>2. Use of the Website</h2>
-
-          <p>
-            <strong>Permitted Use:</strong> You may use the website for
-            personal, non-commercial purposes.
-          </p>
-
-          <p><strong>Prohibited Use:</strong> You may not:</p>
-
-          <ul>
-            <li>Use the website for any illegal or unauthorized purpose.</li>
-            <li>
-              Attempt to gain unauthorized access to the website or its systems.
-            </li>
-            <li>Interfere with the website's functionality or security.</li>
-            <li>Violate any applicable laws or regulations.</li>
-          </ul>
-
-          <h2>3. Intellectual Property</h2>
-
-          <p>
-            All content on the website, including text, images, and software, is
-            protected by copyright and other intellectual property laws. You may
-            not reproduce, distribute, or modify any content without our prior
-            written consent.
-          </p>
-
-          <h2>4. User Content</h2>
-
-          <p>
-            You may submit content, such as comments or reviews, to the website.
-            By submitting content, you grant us a non-exclusive, worldwide,
-            royalty-free license to use, reproduce, modify, adapt, publish, and
-            distribute the content.
-          </p>
-
-          <h2>5. Disclaimer of Warranties</h2>
-
-          <p>
-            The website is provided "as is" without any warranties, express or
-            implied. We do not guarantee the accuracy, completeness, or
-            reliability of the content on the website.
-          </p>
-
-          <h2>6. Limitation of Liability</h2>
-
-          <p>
-            In no event shall we be liable for any indirect, incidental,
-            special, consequential, or punitive damages arising out of your use
-            of the website.
-          </p>
-
-          <h2>7. Changes to Terms and Conditions</h2>
-
-          <p>
-            We reserve the right to modify these Terms and Conditions at any
-            time. We will notify you of any significant changes.
-          </p>
-
-          <h2>8. Governing Law</h2>
-
-          <p>
-            These Terms and Conditions shall be governed by and construed in
-            accordance with the laws of Indian Constitution.
-          </p>
-
-          <h2>9. Contact Us</h2>
-
-          <p>
-            If you have any questions or concerns regarding these Terms and
-            Conditions, please contact us at
-            <a href="mailto:bookescape1910@gmail.com"
-              >bookescape1910@gmail.com</a
-            >.
-          </p>
+                <div class="col-md-8">
+                  <label for="validationCustom03" class="form-label"
+                    >Message</label
+                  >
+                  <textarea
+                    style="height: 10vh"
+                    type="text"
+                    class="form-control msg-input"
+                    id="validationCustom03"
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Kindly share whatever is in your heart.
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button
+                    style="background-color: var(--color-4)"
+                    class="btn mt-4 w-25"
+                    type="submit"
+                    autocomplete="off"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </main>
-
-      <aside
-        style="background-color: var(--light-c-2)"
-        class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3"
-      >
-        <h1>BookEscape</h1>
-        <p>Key to Quality content</p>
-        <div class="chapter-list"></div>
-      </aside>
     </div>
 
     <footer class="bg-dark text-center text-white">
@@ -573,11 +553,69 @@
       </div>
     </footer>
 
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+    <script src="/js/firebase.js"></script>
+    <script src="/js/common.js"></script>
+
+    <script>
+      var form = document.querySelector(".needs-validation");
+
+      form.addEventListener(
+        "submit",
+        async (event) => {
+          // console.log(form.checkValidity());
+
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else {
+            event.preventDefault();
+
+            uploadMessage();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+
+      uploadMessage = async () => {
+        const name = document.querySelector(".name-input").value;
+        const email = document.querySelector(".email-input").value;
+        const message = document.querySelector(".msg-input").value;
+
+        var msg_id = randomString(12);
+
+        try {
+          await db
+            .collection("Messages")
+            .doc("Contact-Us")
+            .set(
+              {
+                [msg_id]: { name: name, email: email, message: message },
+              },
+              { merge: true }
+            );
+
+          alert(
+            "Your message has reached our team. We appreciate your message."
+          );
+
+          location.reload();
+        } catch (error) {
+          console.error("Error uploading Message:", error);
+          alert(
+            "An error occurred while sending your message. Please try again later."
+          );
+        }
+      };
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="/js/common.js"></script>
   </body>
 </html>

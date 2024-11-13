@@ -27,6 +27,45 @@ header > nav {
   background-color: var(--color-4) !important;
 }
 
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  display: block;
+  margin-top: 2px;
+  right: 0;
+  background: #fff;
+  transition: width 0.2s ease;
+  -webkit-transition: width 0.2s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+  left: 0;
+  background: #fff;
+}
+
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.active::after {
+  width: 100%;
+  left: 0;
+  background: #fff;
+}
+
+/* .nav-link:hover {
+  text-decoration: underline !important;
+
+  transition: text-decoration 1s;
+} */
+
 a {
   text-decoration: none;
 }
