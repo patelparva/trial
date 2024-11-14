@@ -54,7 +54,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 
     <link rel="stylesheet" href="/styles/common.css" />
 
@@ -600,7 +600,11 @@
         <div class="container-fluid navbar-container">
           <div>
             <a class="navbar-brand" href="/"
-              ><img src="/assets/logo.png" width="60px" alt="" />BookEscape</a
+              ><img
+                src="/assets/logo.png"
+                width="60px"
+                alt="logo"
+              />BookEscape</a
             >
           </div>
           <button
@@ -1203,6 +1207,27 @@
         // Add the meta tag element to the document's head.
         document.head.appendChild(metaKeywordsElement);
 
+        const metaDescriptionElement = document.createElement("meta");
+
+        const metaDescription =
+          "Find a detailed solution to " +
+          path_url[2].toUpperCase() +
+          " Class " +
+          path_url[3].split("class-").pop() +
+          " " +
+          capitalizeFirstLetter(path_url[4]) +
+          " Chapter " +
+          path_url[5].split("-")[1] +
+          " on BookEscape. Understand the concept of " +
+          data[path_url[2].toUpperCase()][
+            "grade" + path_url[3].split("class-")[1]
+          ][path_url[4]]["chapter" + path_url[5].split("-")[1]]["name"];
+
+        metaDescriptionElement.name = "description";
+        metaDescriptionElement.content = metaDescription;
+
+        document.head.appendChild(metaDescriptionElement);
+
         // Tags End
 
         try {
@@ -1216,8 +1241,6 @@
         } catch (error) {
           console.log(error);
         }
-
-        // console.log();
 
         try {
           next_chapter_button.setAttribute(
