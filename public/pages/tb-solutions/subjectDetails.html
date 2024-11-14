@@ -36,20 +36,25 @@
     <style>
       .content * {
         color: var(--basic-f-color);
-        background-color: var(--light-c-2) !important;
       }
 
       .content,
       .main-container main {
-        background-color: var(--light-c-2) !important;
+        background-color: var(--60-color) !important;
       }
 
       .main-container h6 a {
-        color: var(--dark-c-2);
+        color: var(--weighted-f-color);
+        text-decoration: none;
+      }
+
+      aside {
+        color: var(--60-color);
+        background-color: var(--30-color);
       }
 
       .main-container {
-        background-color: var(--light-c-1);
+        background-color: var(--opt-color);
       }
     </style>
   </head>
@@ -57,7 +62,11 @@
     <header class="fixed-top autohide">
       <nav class="navbar navbar-expand-lg navbar-expand-md px-lg-5">
         <div class="container-fluid navbar-container">
-          <a class="navbar-brand" href="/">BookEscape</a>
+          <div>
+            <a class="navbar-brand" href="/"
+              ><img src="/assets/logo.png" width="60px" alt="" />BookEscape</a
+            >
+          </div>
           <button
             class="navbar-toggler border-0"
             type="button"
@@ -282,14 +291,11 @@
       <h6 class="p-2 px-lg-5 px-md-4 pb-3"></h6>
       <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
         <div class="content">
-          <h1 style="color: var(--dark-c-2)" class="text-center mb-4"></h1>
+          <h1 class="text-center mb-4"></h1>
         </div>
       </main>
 
-      <aside
-        style="background-color: var(--light-c-2)"
-        class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3"
-      >
+      <aside class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3">
         <h1>BookEscape</h1>
         <p>Key to Quality content</p>
         <div class="chapter-list"></div>

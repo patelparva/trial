@@ -7,12 +7,17 @@
   --dark-c-2: #133e87;
   --basic-f-color: #001f3f;
    */
-  --light-c-1: #b1bdb9;
-  --light-c-2: #cccccc;
+  /* --light-c-1: #f5ecec;
+  --light-c-2: #9bc1bc;
   --dark-c-1: #c2b4a9;
   --dark-c-2: #302f2e;
   --basic-f-color: #001f3f;
-  --color-4: #e1e8f0;
+  --color-4: #f4f1bb; */
+
+  --60-color: #70a49d;
+  --30-color: #e6dfd5;
+  --10-color: #f17e6e;
+  --opt-color: #f1f1f1;
 }
 
 * {
@@ -24,7 +29,7 @@
 }
 
 header > nav {
-  background-color: var(--color-4) !important;
+  background-color: var(--30-color) !important;
 }
 
 .nav-link {
@@ -39,7 +44,7 @@ header > nav {
   display: block;
   margin-top: 2px;
   right: 0;
-  background: #fff;
+  background: var(--10-color);
   transition: width 0.2s ease;
   -webkit-transition: width 0.2s ease;
 }
@@ -47,7 +52,7 @@ header > nav {
 .nav-link:hover:after {
   width: 100%;
   left: 0;
-  background: #fff;
+  background: var(--10-color);
 }
 
 .dropdown-toggle::after {
@@ -57,7 +62,7 @@ header > nav {
 .active::after {
   width: 100%;
   left: 0;
-  background: #fff;
+  background: var(--10-color);
 }
 
 /* .nav-link:hover {

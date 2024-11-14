@@ -46,20 +46,31 @@
     <style>
       .content * {
         color: var(--basic-f-color);
-        background-color: var(--light-c-2) !important;
       }
 
       .content,
       .main-container main {
-        background-color: var(--light-c-2) !important;
+        background-color: var(--60-color) !important;
       }
 
       .main-container h6 a {
-        color: var(--dark-c-2);
+        color: var(--weighted-f-color);
+        text-decoration: none;
+      }
+
+      aside {
+        color: var(--60-color);
+        background-color: var(--30-color);
       }
 
       .main-container {
-        background-color: var(--light-c-1);
+        background-color: var(--opt-color);
+      }
+
+      input,
+      textarea,
+      span {
+        background-color: var(--30-color) !important;
       }
     </style>
   </head>
@@ -67,7 +78,11 @@
     <header class="fixed-top autohide">
       <nav class="navbar navbar-expand-lg navbar-expand-md px-lg-5">
         <div class="container-fluid navbar-container">
-          <a class="navbar-brand" href="/">BookEscape</a>
+          <div>
+            <a class="navbar-brand" href="/"
+              ><img src="/assets/logo.png" width="60px" alt="" />BookEscape</a
+            >
+          </div>
           <button
             class="navbar-toggler border-0"
             type="button"
@@ -350,7 +365,7 @@
                 </div>
                 <div class="text-center">
                   <button
-                    style="background-color: var(--color-4)"
+                    style="background-color: var(--10-color)"
                     class="btn mt-4 w-25"
                     type="submit"
                     autocomplete="off"
