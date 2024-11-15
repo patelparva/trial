@@ -550,13 +550,31 @@
         // console.log(data["GSEB"]["grade" + path_url[2].split("class")[1]]);
 
         // Title
-        document.head.appendChild(document.createElement("title"));
-        document.querySelector("title").textContent =
-          path_url[2].toUpperCase() +
-          " Textbook Solutions For Class " +
-          path_url[3].split("class-").pop() +
-          " " +
-          capitalizeFirstLetter(path_url[4]);
+        if (
+          data[path_url[2].toUpperCase()][
+            "grade" + path_url[3].split("class-")[1]
+          ][path_url[4]]["book_name"]
+        ) {
+          document.head.appendChild(document.createElement("title"));
+          document.querySelector("title").textContent =
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " : " +
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]]["book_name"];
+        } else {
+          document.head.appendChild(document.createElement("title"));
+          document.querySelector("title").textContent =
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]);
+        }
 
         const metaDescriptionElement = document.createElement("meta");
 
@@ -635,10 +653,11 @@
         // Tags End
 
         // h1 writing
+
         if (
           data[path_url[2].toUpperCase()][
             "grade" + path_url[3].split("class-")[1]
-          ][path_url[4]].book_name
+          ][path_url[4]]["book_name"]
         ) {
           document.querySelector(
             "main h1"
@@ -647,7 +666,7 @@
           } <br> ${capitalizeFirstLetter(path_url[4])} : ${
             data[path_url[2].toUpperCase()][
               "grade" + path_url[3].split("class-")[1]
-            ][path_url[4]].book_name
+            ][path_url[4]]["book_name"]
           }`;
         } else {
           document.querySelector(
