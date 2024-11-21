@@ -43,8 +43,6 @@ get_data = async () => {
   return f_data;
 };
 
-get_data();
-
 document.addEventListener("DOMContentLoaded", function () {
   el_autohide = document.querySelector(".autohide");
 

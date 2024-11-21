@@ -65,6 +65,10 @@ app.get("/blogs", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/blogs/main.html"));
 });
 
+app.get("/blogs/:blog", (req, res) => {
+  res.sendFile(path.join(initial_path, "pages/blogs/blog.html"));
+});
+
 // Privacy Policy
 app.get("/privacy-policy", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/privacy-policy.html"));
