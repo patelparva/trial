@@ -20,6 +20,11 @@ app.get("/contact-us", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/contact.html"));
 });
 
+// Robots.txt
+app.get("/robots.txt", (req, res) => {
+  res.sendFile(path.join(initial_path, "robots.txt"));
+});
+
 // Textbook Solutions Starts
 app.get("/tb-solutions", (req, res) => {
   res.sendFile(path.join(initial_path, "pages/tb-solutions/main.html"));
