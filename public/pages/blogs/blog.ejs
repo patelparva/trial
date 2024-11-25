@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8RQKCJR9GG"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8RQKCJR9GG");
+    </script>
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5292361284757233"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Harshil Patel" />
+    <title><%= data["title"] %></title>
+    <meta name="description" content="<%= data["description"] %>"> <meta
+    name="keywords" content="<%= data["keywords"] %>">
+
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="/styles/common.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      @media screen and (max-width: 767px) {
+        table {
+          font-size: 2.7vw;
+        }
+      }
+
+      table td {
+        border: solid;
+        border-color: var(--dark-c-1);
+        border-style: double;
+      }
+
+      .fr-clearfix::after {
+        clear: both;
+        display: block;
+        content: "";
+        height: 0;
+      }
+      .fr-hide-by-clipping {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      .fr-view img.fr-rounded,
+      .fr-view .fr-img-caption.fr-rounded img {
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+      }
+      .fr-view img.fr-shadow,
+      .fr-view .fr-img-caption.fr-shadow img {
+        -webkit-box-shadow: 10px 10px 5px 0px #cccccc;
+        -moz-box-shadow: 10px 10px 5px 0px #cccccc;
+        box-shadow: 10px 10px 20px 0px #cccccc;
+      }
+      .fr-view img.fr-bordered,
+      .fr-view .fr-img-caption.fr-bordered img {
+        border: solid 5px #ccc;
+      }
+      .fr-view img.fr-bordered {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+      }
+      .fr-view .fr-img-caption.fr-bordered img {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .fr-view {
+        word-wrap: break-word;
+      }
+      .fr-view span[style~="color:"] a {
+        color: inherit;
+      }
+      .fr-view strong {
+        font-weight: 700;
+      }
+      .fr-view table[border="0"] td:not([class]),
+      .fr-view table[border="0"] th:not([class]),
+      .fr-view table[border="0"] td[class=""],
+      .fr-view table[border="0"] th[class=""] {
+        border-width: 0px;
+      }
+      .fr-view table {
+        border: none;
+        border-collapse: collapse;
+        empty-cells: show;
+        max-width: 100%;
+      }
+      .fr-view table td {
+        min-width: 5px;
+      }
+      .fr-view table.fr-dashed-borders td,
+      .fr-view table.fr-dashed-borders th {
+        border-style: dashed;
+      }
+      .fr-view table.fr-alternate-rows tbody tr:nth-child(2n) {
+        background: whitesmoke;
+      }
+      .fr-view table td,
+      .fr-view table th {
+        border: 1px solid #ddd;
+      }
+      .fr-view table td:empty,
+      .fr-view table th:empty {
+        height: 20px;
+      }
+      .fr-view table td.fr-highlighted,
+      .fr-view table th.fr-highlighted {
+        border: 1px double red;
+      }
+      .fr-view table td.fr-thick,
+      .fr-view table th.fr-thick {
+        border-width: 2px;
+      }
+      .fr-view table th {
+        background: #ececec;
+      }
+      .fr-view hr {
+        clear: both;
+        user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        break-after: always;
+        page-break-after: always;
+      }
+      .fr-view .fr-file {
+        position: relative;
+      }
+      .fr-view .fr-file::after {
+        position: relative;
+        content: "\1F4CE";
+        font-weight: normal;
+      }
+      .fr-view pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow: visible;
+      }
+      .fr-view[dir="rtl"] blockquote {
+        border-left: none;
+        border-right: solid 2px #5e35b1;
+        margin-right: 0;
+        padding-right: 5px;
+        padding-left: 0;
+      }
+      .fr-view[dir="rtl"] blockquote blockquote {
+        border-color: #00bcd4;
+      }
+      .fr-view[dir="rtl"] blockquote blockquote blockquote {
+        border-color: #43a047;
+      }
+      .fr-view blockquote {
+        border-left: solid 2px #5e35b1;
+        margin-left: 0;
+        padding-left: 5px;
+        color: #5e35b1;
+      }
+      .fr-view blockquote blockquote {
+        border-color: #00bcd4;
+        color: #00bcd4;
+      }
+      .fr-view blockquote blockquote blockquote {
+        border-color: #43a047;
+        color: #43a047;
+      }
+      .fr-view span.fr-emoticon {
+        font-weight: normal;
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji",
+          "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+        display: inline;
+        line-height: 0;
+      }
+      .fr-view span.fr-emoticon.fr-emoticon-img {
+        background-repeat: no-repeat !important;
+        font-size: inherit;
+        height: 1em;
+        width: 1em;
+        min-height: 20px;
+        min-width: 20px;
+        display: inline-block;
+        margin: -0.1em 0.1em 0.1em;
+        line-height: 1;
+        vertical-align: middle;
+      }
+      .fr-view .fr-text-gray {
+        color: #aaa !important;
+      }
+      .fr-view .fr-text-bordered {
+        border-top: solid 1px #222;
+        border-bottom: solid 1px #222;
+        padding: 10px 0;
+      }
+      .fr-view .fr-text-spaced {
+        letter-spacing: 1px;
+      }
+      .fr-view .fr-text-uppercase {
+        text-transform: uppercase;
+      }
+      .fr-view .fr-class-highlighted {
+        background-color: #ffff00;
+      }
+      .fr-view .fr-class-code {
+        border-color: #cccccc;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        background: #f5f5f5;
+        padding: 10px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .fr-view .fr-class-transparency {
+        opacity: 0.5;
+      }
+      .fr-view img {
+        position: relative;
+        max-width: 100%;
+      }
+      .fr-view img.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        /* vertical-align: ; */
+      }
+      .fr-view img.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      .fr-view img.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      .fr-view img.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      .fr-view img.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view img.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view span.fr-img-caption {
+        position: relative;
+        max-width: 100%;
+      }
+      .fr-view span.fr-img-caption.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        vertical-align: top;
+      }
+      .fr-view span.fr-img-caption.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      .fr-view span.fr-img-caption.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      .fr-view span.fr-img-caption.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      .fr-view span.fr-img-caption.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view span.fr-img-caption.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view .fr-video {
+        text-align: center;
+        position: relative;
+      }
+      .fr-view .fr-video.fr-rv {
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+      }
+      .fr-view .fr-video.fr-rv > iframe,
+      .fr-view .fr-video.fr-rv object,
+      .fr-view .fr-video.fr-rv embed {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .fr-view .fr-video > * {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        max-width: 100%;
+        border: none;
+      }
+      .fr-view .fr-video.fr-dvb {
+        display: block;
+        clear: both;
+      }
+      .fr-view .fr-video.fr-dvb.fr-fvl {
+        text-align: left;
+      }
+      .fr-view .fr-video.fr-dvb.fr-fvr {
+        text-align: right;
+      }
+      .fr-view .fr-video.fr-dvi {
+        display: inline-block;
+      }
+      .fr-view .fr-video.fr-dvi.fr-fvl {
+        float: left;
+      }
+      .fr-view .fr-video.fr-dvi.fr-fvr {
+        float: right;
+      }
+      .fr-view a.fr-strong {
+        font-weight: 700;
+      }
+      .fr-view a.fr-green {
+        color: green;
+      }
+      .fr-view .fr-img-caption {
+        text-align: center;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap {
+        padding: 0;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap a {
+        display: block;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap img {
+        display: block;
+        margin: auto;
+        width: 100%;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap > span {
+        margin: auto;
+        display: block;
+        padding: 5px 5px 10px;
+        font-size: 14px;
+        font-weight: initial;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-opacity: 0.9;
+        -moz-opacity: 0.9;
+        opacity: 0.9;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        width: 100%;
+        text-align: center;
+      }
+      .fr-view button.fr-rounded,
+      .fr-view input.fr-rounded,
+      .fr-view textarea.fr-rounded {
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+      }
+      .fr-view button.fr-large,
+      .fr-view input.fr-large,
+      .fr-view textarea.fr-large {
+        font-size: 24px;
+      }
+      a.fr-view.fr-strong {
+        font-weight: 700;
+      }
+      a.fr-view.fr-green {
+        color: green;
+      }
+      img.fr-view {
+        position: relative;
+        max-width: 100%;
+      }
+      img.fr-view.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        vertical-align: top;
+      }
+      img.fr-view.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      img.fr-view.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      img.fr-view.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      img.fr-view.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      img.fr-view.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+      span.fr-img-caption.fr-view {
+        position: relative;
+        max-width: 100%;
+      }
+      span.fr-img-caption.fr-view.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        vertical-align: top;
+      }
+      span.fr-img-caption.fr-view.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      span.fr-img-caption.fr-view.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      span.fr-img-caption.fr-view.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      span.fr-img-caption.fr-view.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      span.fr-img-caption.fr-view.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+
+      p[data-f-id="pbf"] {
+        display: none !important;
+      }
+
+      .content * {
+        color: var(--basic-f-color);
+      }
+
+      .content,
+      .main-container main {
+        background-color: var(--60-color) !important;
+      }
+
+      .main-container h6 a {
+        color: var(--weighted-f-color);
+        text-decoration: none;
+      }
+
+      aside {
+        color: var(--60-color);
+        background-color: var(--30-color);
+      }
+
+      .main-container {
+        background-color: var(--opt-color);
+      }
+
+      .card:hover {
+        scale: 1.02;
+        transition: scale 0.1s;
+      }
+
+      .card {
+        scale: 1;
+        transition: scale 0.1s;
+      }
+
+      .card:hover::after {
+        scale: 1;
+        transition: scale 0.1s;
+      }
+
+      h3 {
+        color: var(--weighted-f-color) !important;
+        font-weight: 600;
+      }
+
+      h2 {
+        color: var(--weighted-f-color) !important;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+
+      .badge {
+        background-color: #a0a0a0;
+      }
+
+      .horizontal-scroll {
+        display: flex;
+        overflow-x: auto;
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .horizontal-scroll::-webkit-scrollbar {
+        display: none; /* Hides scrollbar */
+      }
+
+      .topic-list > * {
+        list-style: disc;
+      }
+
+      .blog-content a {
+        color: var(--weighted-f-color);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="fixed-top autohide">
+      <nav class="navbar navbar-expand-lg navbar-expand-md px-lg-5">
+        <div class="container-fluid navbar-container">
+          <div>
+            <a class="navbar-brand" href="/"
+              ><img
+                src="/assets/logo.png"
+                width="60px"
+                alt="logo"
+              />BookEscape</a
+            >
+          </div>
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse mx-lg-5 justify-content-evenly tabs-container"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about-us">About</a>
+              </li>
+              <li class="nav-item dropdown main-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="outside"
+                  data-bs-auto-close="false"
+                >
+                  Textbook Solutions
+                </a>
+                <ul class="dropdown-menu main-dropdown-menu bg-light">
+                  <li>
+                    <div class="btn-group dropend w-100 main-dropend">
+                      <a
+                        type="button"
+                        class="btn btn-light dropdown-toggle text-start"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        NCERT/CBSE
+                      </a>
+                      <ul class="dropdown-menu main-dropend-menu">
+                        <li>
+                          <a
+                            class="dropdown-item d-none"
+                            href="/tb-solutions/ncert/class-6"
+                            >Class 6</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item d-none"
+                            href="/tb-solutions/ncert/class-7"
+                            >Class 7</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item d-none"
+                            href="/tb-solutions/ncert/class-8"
+                            >Class 8</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="/tb-solutions/ncert/class-9"
+                            >Class 9</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="/tb-solutions/ncert/class-10"
+                            >Class 10</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="btn-group dropend w-100 main-dropend">
+                      <button
+                        type="button"
+                        class="btn btn-light dropdown-toggle text-start"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        GSEB
+                      </button>
+
+                      <ul class="dropdown-menu main-dropend-menu">
+                        <li>
+                          <a
+                            class="dropdown-item d-none"
+                            href="/tb-solutions/gseb/class-6"
+                            >Class 6</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item d-none"
+                            href="/tb-solutions/gseb/class-7"
+                            >Class 7</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item d-none"
+                            href="/tb-solutions/gseb/class-8"
+                            >Class 8</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="/tb-solutions/ncert/class-9"
+                            >Class 9</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="/tb-solutions/ncert/class-10"
+                            >Class 10</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <div class="btn-group dropend w-100 main-dropend">
+                      <button
+                        type="button"
+                        class="btn btn-light dropdown-toggle text-start"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Textbook's PDF
+                      </button>
+
+                      <ul class="dropdown-menu main-dropend-menu">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="https://ncert.nic.in/textbook.php"
+                            >GSEB</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="https://ncert.nic.in/textbook.php"
+                            >NCERT</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/practice-papers">Practice Papers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/blogs">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact-us">Contact</a>
+              </li>
+            </ul>
+
+            <div class="theme-changer d-none">
+              <input
+                class="theme-checkbox"
+                type="checkbox"
+                id="darkmode-toggle"
+              />
+              <label class="theme-label" for="darkmode-toggle">
+                <svg
+                  class="bulb-off"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>lightbulb</title>
+                  <path
+                    d="M12,2A7,7 0 0,0 5,9C5,11.38 6.19,13.47 8,14.74V17A1,1 0 0,0 9,18H15A1,1 0 0,0 16,17V14.74C17.81,13.47 19,11.38 19,9A7,7 0 0,0 12,2M9,21A1,1 0 0,0 10,22H14A1,1 0 0,0 15,21V20H9V21Z"
+                  />
+                </svg>
+                <svg
+                  class="bulb-on"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>lightbulb-on</title>
+                  <path
+                    d="M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63Z"
+                  />
+                </svg>
+
+                <svg
+                  class="quill"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <title>feather</title>
+                  <path
+                    d="M22,2C22,2 14.36,1.63 8.34,9.88C3.72,16.21 2,22 2,22L3.94,21C5.38,18.5 6.13,17.47 7.54,16C10.07,16.74 12.71,16.65 15,14C13,13.44 11.4,13.57 9.04,13.81C11.69,12 13.5,11.6 16,12L17,10C15.2,9.66 14,9.63 12.22,10.04C14.19,8.65 15.56,7.87 18,8L19.21,6.07C17.65,5.96 16.71,6.13 14.92,6.57C16.53,5.11 18,4.45 20.14,4.32C20.14,4.32 21.19,2.43 22,2Z"
+                  />
+                </svg>
+              </label>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-container p-3 row justify-content-around">
+      <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
+        <div
+          class="content justify-content-center mx-lg-5 m-2 w-auto"
+          style="font-size: 18px"
+        >
+          <div class="heading-container">
+            <h1 style="color: var(--weighted-f-color)" class="mb-3">
+              <%= data["title"] %>
+            </h1>
+            <div
+              class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-3"
+            >
+              <div
+                class="d-flex align-items-center flex-wrap text-muted mb-md-0 mb-4"
+              >
+                <div
+                  class="fs-xs border-end pe-3 me-3 mb-2"
+                  style="border-color: #4d4d4d !important"
+                >
+                  <strong
+                    class="badge rounded-pill fs-sm text-decoration-none me-3"
+                    >Education</strong
+                  >
+                </div>
+                <div
+                  class="fs-sm border-end pe-3 me-3 mb-2"
+                  style="border-color: #4d4d4d !important"
+                >
+                  <%= new Date( data.timestamp ).toDateString().substring(4,25)
+                  %>
+                </div>
+                <div class="d-flex mt-2">
+                  <p class="fw-semibold">Harshil Patel</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-content row col-12 justify-content-center">
+            <img src="<%= data["thumbnail"] %>" class="img-fluid col-12 col-lg-9
+            col-md-8 mb-3" style="border-radius: 20px" alt="Thumbnail">
+            <%-data["content"] %>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="d-none d-lg-block">
+          <div>
+            <p class="mx-3 fw-bold" style="color: var(--weighted-f-color)">
+              Read more of our Blogs
+            </p>
+            <div class="horizontal-scroll d-lg-flex"></div>
+          </div>
+          <a
+            class="btn border-0 load-more w-100"
+            href="/blogs"
+            role="button"
+            style="color: #313131; font-weight: 700"
+            >Load More <i class="fa-solid fa-caret-down"></i
+          ></a>
+        </div>
+      </main>
+
+      <aside class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3">
+        <h1>BookEscape</h1>
+        <div class="row">
+          <ol class="topic-list mx-2" style="list-style: circle"></ol>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="bg-dark text-center text-white">
+      <div class="container p-4">
+        <div class="row mt-4 text-center">
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="">Textbook Solutions</h5>
+
+            <div class="d-lg-flex justify-content-around">
+              <ul class="list-unstyled mb-0 fs-6">
+                <h6>NCERT/CBSE</h6>
+                <li>
+                  <a
+                    href="/tb-solutions/ncert/class-6"
+                    class="text-white d-none"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 6</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/tb-solutions/ncert/class-7"
+                    class="text-white d-none"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 7</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/tb-solutions/ncert/class-8"
+                    class="text-white d-none"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 8</a
+                  >
+                </li>
+                <li>
+                  <a href="/tb-solutions/ncert/class-9" class="text-white"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 9</a
+                  >
+                </li>
+                <li>
+                  <a href="/tb-solutions/ncert/class-10" class="text-white"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 10</a
+                  >
+                </li>
+              </ul>
+              <ul class="list-unstyled mb-0 mx-4 mt-lg-0 mt-3 fs-6">
+                <h6>GSEB</h6>
+                <li>
+                  <a href="/tb-solutions/gseb/class-6" class="text-white d-none"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 6</a
+                  >
+                </li>
+                <li>
+                  <a href="/tb-solutions/gseb/class-7" class="text-white d-none"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 7</a
+                  >
+                </li>
+                <li>
+                  <a href="/tb-solutions/gseb/class-8" class="text-white d-none"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 8</a
+                  >
+                </li>
+                <li>
+                  <a href="/tb-solutions/ncert/class-9" class="text-white"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 9</a
+                  >
+                </li>
+                <li>
+                  <a href="/tb-solutions/ncert/class-10" class="text-white"
+                    ><i class="fas fa-book fa-fw fa-sm me-2"></i>Class 10</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="">Links</h5>
+
+            <ul class="list-unstyled fs-6">
+              <li>
+                <a href="/" class="text-white"
+                  ><i class="fas fa-home fa-fw fa-sm me-2"></i>Home</a
+                >
+              </li>
+              <li>
+                <a href="/about-us" class="text-white"
+                  ><i class="fas fa-info-circle fa-fw fa-sm me-2"></i>About
+                  Us</a
+                >
+              </li>
+              <li>
+                <a href="/practice-papers" class="text-white"
+                  ><i class="fas fa-paperclip fa-fw fa-sm me-2"></i>Practice
+                  Papers</a
+                >
+              </li>
+              <li>
+                <a href="/blogs" class="text-white"
+                  ><i class="fas fa-blog fa-fw fa-sm me-2"></i>Blogs</a
+                >
+              </li>
+              <li>
+                <a href="/contact-us" class="text-white"
+                  ><i class="fas fa-blog fa-fw fa-sm me-2"></i>Contact Us</a
+                >
+              </li>
+              <li class="mt-3">
+                <a href="/terms-and-conditions" class="text-white"
+                  ><i class="far fa-file-alt fa-fw fa-sm me-2"></i>T&C's</a
+                >
+              </li>
+              <li>
+                <a href="/privacy-policy " class="text-white"
+                  ><i class="far fa-file-alt fa-fw fa-sm me-2"></i>Privacy
+                  policy</a
+                >
+              </li>
+            </ul>
+            <div class="d-none d-md-block d-lg-none">
+              <h5 class="">Contact us</h5>
+
+              <ul class="list-unstyled fs-6">
+                <li>
+                  <a href="mailto:patelparva6218@gmail.com" class="text-white"
+                    ><i class="fas fa-at fa-fw fa-sm me-2"></i>Email Us</a
+                  >
+                </li>
+                <li>
+                  <a href="/contact-us" class="text-white"
+                    ><i class="fas fa-address-card fa-fw fa-sm me-2"></i>Contact
+                    Form</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@BookEscape-1910"
+                    class="text-white"
+                    ><i class="fa-brands fa-youtube me-2"></i>YouTube</a
+                  >
+                </li>
+                <li>
+                  <a href="/blogs/subscribe" class="text-white d-none"
+                    ><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Subscribe
+                    Us</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-12 mb-4 mb-md-0 mt-md-3 d-md-none d-lg-block"
+          >
+            <h5 class="">Contact us</h5>
+
+            <ul class="list-unstyled fs-6">
+              <li>
+                <a href="mailto:bookescape1910@gmail.com" class="text-white"
+                  ><i class="fas fa-at fa-fw fa-sm me-2"></i>Email Us</a
+                >
+              </li>
+              <li>
+                <a href="/contact-us" class="text-white d-none"
+                  ><i class="fas fa-address-card fa-fw fa-sm me-2"></i>Contact
+                  Form</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.youtube.com/@BookEscape-1910"
+                  class="text-white"
+                  ><i class="fa-brands fa-youtube me-2"></i>YouTube</a
+                >
+              </li>
+              <li>
+                <a href="/blogs/subscribe" class="text-white d-none"
+                  ><i class="fas fa-envelope fa-fw fa-sm me-2"></i>Subscribe
+                  Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2024 Copyright:
+        <a class="text-white" href="https://bookesc.in/">BookEsc.in</a>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+    <script src="/js/firebase.js"></script>
+    <script src="/js/common.js"></script>
+
+    <script>
+      const blog_list = document.querySelector(".blog-list");
+      let path_url = location.pathname.split("/");
+      const title = document.querySelector("title").innerHTML;
+
+      write_content = () => {
+        var last_count = 1;
+
+        document.querySelectorAll("h3").forEach((element) => {
+          element.setAttribute("id", "topic" + last_count);
+          last_count++;
+
+          document.querySelector(
+            ".topic-list"
+          ).innerHTML += `<li><a style="text-decoration: none; color: var(--60-color)" href="#topic${
+            last_count - 1
+          }">${element.innerHTML}</a></li>`;
+
+          element.setAttribute("class", "mt-5");
+        });
+
+        document.querySelectorAll("blockquote").forEach((element) => {
+          element.setAttribute("class", "blockquote text-center border-start");
+          element.setAttribute(
+            "style",
+            "border-color: #4d4d4d !important; border-width: 5px;"
+          );
+        });
+      };
+
+      write_content();
+
+      display_blogs = async (title) => {
+        await db
+          .collection("Blogs")
+          .where("title", "!=", title)
+          .limit("3")
+          .get()
+          .then((blogs) => {
+            blogs.forEach((data) => {
+              var temp_data = data.data();
+
+              document.querySelector(".horizontal-scroll").innerHTML += `<div
+                        class="card w-auto text-center p-3 justify-content-center"
+                        style="background-color: var(--30-color); max-width:33%"
+                      >
+                        <a href="/blogs/${temp_data["title"]
+                          .toLowerCase()
+                          .replace(
+                            / /g,
+                            "-"
+                          )}"><img class="card-img-top" src="${
+                temp_data.thumbnail
+              }" alt="${temp_data["title"]}" /></a>
+                        <div class="card-body">
+                          <h5 class="card-title">${temp_data["blog-title"]}</h5>
+                          <p class="card-text">
+                            ${temp_data["description"]}
+                          </p><p class="card-footer small" style="text-align: end">Modified by Harshil Patel <br> - ${new Date(
+                            temp_data.timestamp
+                          )
+                            .toDateString()
+                            .substring(4, 25)}</p>
+                          <a style="background-color: var(--10-color)" href="/blogs/${temp_data[
+                            "title"
+                          ]
+                            .toLowerCase()
+                            .replace(/ /g, "-")}" class="btn">Read More</a>
+
+                        </div>
+                      </div>`;
+            });
+          });
+      };
+
+      display_blogs(title);
+    </script>
+  </body>
+</html>

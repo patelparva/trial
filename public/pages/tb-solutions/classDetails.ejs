@@ -24,7 +24,7 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title><%= board.toUpperCase() + " Textbook Solutions For Class "+grade.split("class-").pop() %></title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 
     <link
@@ -33,8 +33,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/styles/common.css" />
-    <link rel="stylesheet" href="/styles/about.css" />
+    <link rel="stylesheet" href="../../../styles/common.css" />
 
     <style>
       .content * {
@@ -91,14 +90,14 @@
           >
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link =" aria-current="page" href="/">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/about-us">About</a>
+                <a class="nav-link" href="/about-us">About</a>
               </li>
               <li class="nav-item dropdown main-dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link active dropdown-toggle"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="outside"
@@ -294,61 +293,29 @@
       </nav>
     </header>
 
-    <div class="main-container p-3 row justify-content-around">
+    <div class="main-container p-3 row justify-content-around ">
+      <h6 class="p-2 px-lg-5 px-md-4 pb-3"><p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover" >Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href="<%= "/tb-solutions/"+board  %>"><%= board.toUpperCase() %> </a> > Class <%= grade.split("class-").pop() %> </p></h6>
       <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
         <div class="content">
-          <section class="container">
-            <h1 class="text-center mb-4">About Us</h1>
-            <p class="text-center">
-              Your Website Name is your one-stop solution for all your NCERT
-              textbook needs. We're dedicated to providing high-quality,
-              accurate, and easy-to-understand solutions to help students excel
-              in their studies.
-            </p>
-
-            <div class="row mt-5">
-              <div class="col-md-6">
-                <h2 class="text-center">Our Mission</h2>
-                <p>
-                  Our mission is to empower students by providing them with the
-                  tools they need to succeed. We strive to:
-                </p>
-                <ul>
-                  <li>Simplify Complex Concepts</li>
-                  <li>Enhance Understanding</li>
-                  <li>Save Time and Effort</li>
-                  <li>Improve Academic Performance</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <h2 class="text-center">Our Team</h2>
-                <p>
-                  Our team comprises experienced educators, subject matter
-                  experts, and passionate individuals who are committed to
-                  providing the best possible learning experience.
-                </p>
-              </div>
-            </div>
-
-            <div class="row mt-5">
-              <div class="col-12 text-center">
-                <h2 class="text-center">Our Commitment</h2>
-                <p class="">
-                  We are committed to providing a user-friendly platform that
-                  offers a seamless learning experience. Our website is designed
-                  to be easy to navigate, with clear and concise solutions that
-                  are easy to follow.
-                </p>
-              </div>
-            </div>
-          </section>
+          <h1 class="text-center mb-4"><%= board.toUpperCase() + " Textbook Solutions For Class " + grade.split("class-").pop() %></h1>
+          <% for (const [id, value] of Object.entries( data )){ if
+          (data[id].book_name) {%>
+          <a href= "<%= "/tb-solutions/"+board +"/"+grade +"/"+id  %>"
+            >
+            <h5>
+              <%= id[0].toUpperCase()+id.slice(1) + " : " + data[id].book_name
+              %>
+            </h5></a
+          >
+          <%} else{%>
+          <a href= "<%= "/tb-solutions/"+board +"/"+grade +"/"+id  %>"><h5><%= id[0].toUpperCase()+id.slice(1) %></h5></a>
+          <%}}%>
         </div>
       </main>
 
       <aside class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3">
         <h1>BookEscape</h1>
         <p>Key to Quality content</p>
-        <div class="chapter-list"></div>
       </aside>
     </div>
 
@@ -543,8 +510,50 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
-    <script src="/js/firebase.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="../../../js/firebase.js"></script>
+    <script src="../../../js/common.js"></script>
+    <script>
+      let path_url = location.pathname.split("/");
+
+      async function write_content() {
+        const content_div = document.querySelector(".content");
+
+        // Title
+        
+        // Tags Start
+        const metaKeywords = [];
+
+        metaKeywords.push(
+          "BookEscape " +
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop(),
+
+          path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop(),
+
+          "NCERT Class " + path_url[3].split("class-").pop(),
+
+          "Class " + path_url[3].split("class-").pop()
+        );
+
+        // Create a meta tag element.
+        const metaKeywordsElement = document.createElement("meta");
+
+        // Set the meta tag's name and content attributes.
+        metaKeywordsElement.name = "keywords";
+        metaKeywordsElement.content = metaKeywords.join(", ");
+
+        // Add the meta tag element to the document's head.
+        document.head.appendChild(metaKeywordsElement);
+
+        // Tags End
+      }
+
+      write_content();
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

@@ -24,11 +24,10 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Learn better with our easy-to-understand NCERT textbook solutions for all subjects. Our solutions are written by experts and break down tough concepts into simple steps."
-    />
+    <title>Blogs - BookEscape</title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+
+    <link rel="stylesheet" href="/styles/common.css" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -45,9 +44,470 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="/styles/common.css" />
-
     <style>
+      @media screen and (max-width: 767px) {
+        table {
+          font-size: 2.7vw;
+        }
+      }
+
+      table td {
+        border: solid;
+        border-color: var(--dark-c-1);
+        border-style: double;
+      }
+
+      .fr-clearfix::after {
+        clear: both;
+        display: block;
+        content: "";
+        height: 0;
+      }
+      .fr-hide-by-clipping {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      .fr-view img.fr-rounded,
+      .fr-view .fr-img-caption.fr-rounded img {
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+      }
+      .fr-view img.fr-shadow,
+      .fr-view .fr-img-caption.fr-shadow img {
+        -webkit-box-shadow: 10px 10px 5px 0px #cccccc;
+        -moz-box-shadow: 10px 10px 5px 0px #cccccc;
+        box-shadow: 10px 10px 20px 0px #cccccc;
+      }
+      .fr-view img.fr-bordered,
+      .fr-view .fr-img-caption.fr-bordered img {
+        border: solid 5px #ccc;
+      }
+      .fr-view img.fr-bordered {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+      }
+      .fr-view .fr-img-caption.fr-bordered img {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .fr-view {
+        word-wrap: break-word;
+      }
+      .fr-view span[style~="color:"] a {
+        color: inherit;
+      }
+      .fr-view strong {
+        font-weight: 700;
+      }
+      .fr-view table[border="0"] td:not([class]),
+      .fr-view table[border="0"] th:not([class]),
+      .fr-view table[border="0"] td[class=""],
+      .fr-view table[border="0"] th[class=""] {
+        border-width: 0px;
+      }
+      .fr-view table {
+        border: none;
+        border-collapse: collapse;
+        empty-cells: show;
+        max-width: 100%;
+      }
+      .fr-view table td {
+        min-width: 5px;
+      }
+      .fr-view table.fr-dashed-borders td,
+      .fr-view table.fr-dashed-borders th {
+        border-style: dashed;
+      }
+      .fr-view table.fr-alternate-rows tbody tr:nth-child(2n) {
+        background: whitesmoke;
+      }
+      .fr-view table td,
+      .fr-view table th {
+        border: 1px solid #ddd;
+      }
+      .fr-view table td:empty,
+      .fr-view table th:empty {
+        height: 20px;
+      }
+      .fr-view table td.fr-highlighted,
+      .fr-view table th.fr-highlighted {
+        border: 1px double red;
+      }
+      .fr-view table td.fr-thick,
+      .fr-view table th.fr-thick {
+        border-width: 2px;
+      }
+      .fr-view table th {
+        background: #ececec;
+      }
+      .fr-view hr {
+        clear: both;
+        user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        break-after: always;
+        page-break-after: always;
+      }
+      .fr-view .fr-file {
+        position: relative;
+      }
+      .fr-view .fr-file::after {
+        position: relative;
+        content: "\1F4CE";
+        font-weight: normal;
+      }
+      .fr-view pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow: visible;
+      }
+      .fr-view[dir="rtl"] blockquote {
+        border-left: none;
+        border-right: solid 2px #5e35b1;
+        margin-right: 0;
+        padding-right: 5px;
+        padding-left: 0;
+      }
+      .fr-view[dir="rtl"] blockquote blockquote {
+        border-color: #00bcd4;
+      }
+      .fr-view[dir="rtl"] blockquote blockquote blockquote {
+        border-color: #43a047;
+      }
+      .fr-view blockquote {
+        border-left: solid 2px #5e35b1;
+        margin-left: 0;
+        padding-left: 5px;
+        color: #5e35b1;
+      }
+      .fr-view blockquote blockquote {
+        border-color: #00bcd4;
+        color: #00bcd4;
+      }
+      .fr-view blockquote blockquote blockquote {
+        border-color: #43a047;
+        color: #43a047;
+      }
+      .fr-view span.fr-emoticon {
+        font-weight: normal;
+        font-family: "Apple Color Emoji", "Segoe UI Emoji", "NotoColorEmoji",
+          "Segoe UI Symbol", "Android Emoji", "EmojiSymbols";
+        display: inline;
+        line-height: 0;
+      }
+      .fr-view span.fr-emoticon.fr-emoticon-img {
+        background-repeat: no-repeat !important;
+        font-size: inherit;
+        height: 1em;
+        width: 1em;
+        min-height: 20px;
+        min-width: 20px;
+        display: inline-block;
+        margin: -0.1em 0.1em 0.1em;
+        line-height: 1;
+        vertical-align: middle;
+      }
+      .fr-view .fr-text-gray {
+        color: #aaa !important;
+      }
+      .fr-view .fr-text-bordered {
+        border-top: solid 1px #222;
+        border-bottom: solid 1px #222;
+        padding: 10px 0;
+      }
+      .fr-view .fr-text-spaced {
+        letter-spacing: 1px;
+      }
+      .fr-view .fr-text-uppercase {
+        text-transform: uppercase;
+      }
+      .fr-view .fr-class-highlighted {
+        background-color: #ffff00;
+      }
+      .fr-view .fr-class-code {
+        border-color: #cccccc;
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        background: #f5f5f5;
+        padding: 10px;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .fr-view .fr-class-transparency {
+        opacity: 0.5;
+      }
+      .fr-view img {
+        position: relative;
+        max-width: 100%;
+      }
+      .fr-view img.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        /* vertical-align: ; */
+      }
+      .fr-view img.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      .fr-view img.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      .fr-view img.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      .fr-view img.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view img.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view span.fr-img-caption {
+        position: relative;
+        max-width: 100%;
+      }
+      .fr-view span.fr-img-caption.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        vertical-align: top;
+      }
+      .fr-view span.fr-img-caption.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      .fr-view span.fr-img-caption.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      .fr-view span.fr-img-caption.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      .fr-view span.fr-img-caption.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view span.fr-img-caption.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+      .fr-view .fr-video {
+        text-align: center;
+        position: relative;
+      }
+      .fr-view .fr-video.fr-rv {
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+      }
+      .fr-view .fr-video.fr-rv > iframe,
+      .fr-view .fr-video.fr-rv object,
+      .fr-view .fr-video.fr-rv embed {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .fr-view .fr-video > * {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        max-width: 100%;
+        border: none;
+      }
+      .fr-view .fr-video.fr-dvb {
+        display: block;
+        clear: both;
+      }
+      .fr-view .fr-video.fr-dvb.fr-fvl {
+        text-align: left;
+      }
+      .fr-view .fr-video.fr-dvb.fr-fvr {
+        text-align: right;
+      }
+      .fr-view .fr-video.fr-dvi {
+        display: inline-block;
+      }
+      .fr-view .fr-video.fr-dvi.fr-fvl {
+        float: left;
+      }
+      .fr-view .fr-video.fr-dvi.fr-fvr {
+        float: right;
+      }
+      .fr-view a.fr-strong {
+        font-weight: 700;
+      }
+      .fr-view a.fr-green {
+        color: green;
+      }
+      .fr-view .fr-img-caption {
+        text-align: center;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap {
+        padding: 0;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap a {
+        display: block;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap img {
+        display: block;
+        margin: auto;
+        width: 100%;
+      }
+      .fr-view .fr-img-caption .fr-img-wrap > span {
+        margin: auto;
+        display: block;
+        padding: 5px 5px 10px;
+        font-size: 14px;
+        font-weight: initial;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-opacity: 0.9;
+        -moz-opacity: 0.9;
+        opacity: 0.9;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        width: 100%;
+        text-align: center;
+      }
+      .fr-view button.fr-rounded,
+      .fr-view input.fr-rounded,
+      .fr-view textarea.fr-rounded {
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+      }
+      .fr-view button.fr-large,
+      .fr-view input.fr-large,
+      .fr-view textarea.fr-large {
+        font-size: 24px;
+      }
+      a.fr-view.fr-strong {
+        font-weight: 700;
+      }
+      a.fr-view.fr-green {
+        color: green;
+      }
+      img.fr-view {
+        position: relative;
+        max-width: 100%;
+      }
+      img.fr-view.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        vertical-align: top;
+      }
+      img.fr-view.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      img.fr-view.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      img.fr-view.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      img.fr-view.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      img.fr-view.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+      span.fr-img-caption.fr-view {
+        position: relative;
+        max-width: 100%;
+      }
+      span.fr-img-caption.fr-view.fr-dib {
+        margin: 5px auto;
+        display: block;
+        float: none;
+        vertical-align: top;
+      }
+      span.fr-img-caption.fr-view.fr-dib.fr-fil {
+        margin-left: 0;
+        text-align: left;
+      }
+      span.fr-img-caption.fr-view.fr-dib.fr-fir {
+        margin-right: 0;
+        text-align: right;
+      }
+      span.fr-img-caption.fr-view.fr-dii {
+        display: inline-block;
+        float: none;
+        vertical-align: bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        max-width: calc(100% - (2 * 5px));
+      }
+      span.fr-img-caption.fr-view.fr-dii.fr-fil {
+        float: left;
+        margin: 5px 5px 5px 0;
+        max-width: calc(100% - 5px);
+      }
+      span.fr-img-caption.fr-view.fr-dii.fr-fir {
+        float: right;
+        margin: 5px 0 5px 5px;
+        max-width: calc(100% - 5px);
+      }
+
+      p[data-f-id="pbf"] {
+        display: none !important;
+      }
+
       .content * {
         color: var(--basic-f-color);
       }
@@ -69,6 +529,21 @@
 
       .main-container {
         background-color: var(--opt-color);
+      }
+
+      .card:hover {
+        scale: 1.03;
+        transition: scale 0.1s;
+      }
+
+      .card {
+        scale: 1;
+        transition: scale 0.1s;
+      }
+
+      .card:hover::after {
+        scale: 1;
+        transition: scale 0.1s;
       }
     </style>
   </head>
@@ -109,7 +584,7 @@
               </li>
               <li class="nav-item dropdown main-dropdown">
                 <a
-                  class="nav-link active dropdown-toggle"
+                  class="nav-link dropdown-toggle"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="outside"
@@ -253,7 +728,7 @@
                 <a class="nav-link" href="/practice-papers">Practice Papers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/blogs">Blog</a>
+                <a class="nav-link active" href="/blogs">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/contact-us">Contact</a>
@@ -305,46 +780,64 @@
       </nav>
     </header>
 
-    <div class="main-container p-3 row justify-content-around">
+    <div class="main-container p-3 row justify-content-around ">
       <h6 class="p-2 px-lg-5 px-md-4 pb-3"></h6>
       <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
-        <div class="content">
-          <h1 class="text-center mb-4"></h1>
+        <div class="content justify-content-center text-center">
+          <h1 style="color: var(--weighted-f-color)" class="text-center mb-5">
+            Blogs
+          </h1>
 
-          <hr />
-          <h5 class="text-center">
-            Get free NCERT textbook solutions for Class 9-10 and study better!
-          </h5>
-          <p class="text-center px-5">
-            Learn better with our easy-to-understand NCERT textbook solutions
-            for all subjects. Our solutions are written by experts and break
-            down tough concepts into simple steps.
-          </p>
-
-          <div class="d-flex col col-12 justify-content-around">
-            <a
-              style="background-color: var(--10-color)"
-              class="btn"
-              href="/tb-solutions/ncert/class-9"
-              role="button"
-              ><h5>Class 9</h5></a
+          <div class="blog-list row col-12 justify-content-center">
+            <% if (data) { data.forEach(blog =>  {  %>
+            <div
+              class="card mx-4 mb-5 col-10 col-md-10 col-lg-5 text-center p-3 justify-content-center"
+              style="background-color: var(--30-color)"
             >
-
-            <a
-              style="background-color: var(--10-color)"
-              class="btn"
-              href="/tb-solutions/ncert/class-10"
-              role="button"
-              ><h5>Class 10</h5></a
-            >
+              <a href= <%= "blogs/" + blog["title"].toLowerCase()
+                    .replace(/ /g, "-") %>  ><img class="card-img-top" src="<%= blog["thumbnail"] %>" alt="<%= blog["title"] %>" /></a>
+              <div class="card-body">
+                <h5 class="card-title blog-title"><%= blog["blog-title"] %></h5>
+                <p class="card-text"><%= blog["description"] %></p>
+                <p class="card-footer small" style="text-align: end">
+                  Modified by Harshil Patel <br />
+                  - <%= new Date(blog["timestamp"]).toDateString()
+                      .substring(4, 25) %>
+                </p>
+                <a style="background-color: var(--10-color)" href="<%= "blogs/"+blog["title"].toLowerCase().replace(/ /g, "-") %>" class="btn"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <% }) } %>
           </div>
+          <a
+            class="btn border-0 load-more"
+            href=""
+            role="button"
+            style="color: #313131; font-weight: 700"
+            >Load More <i class="fa-solid fa-caret-down"></i
+          ></a>
         </div>
       </main>
 
       <aside class="shadow col-3 d-none d-lg-block d-xl-block d-xxl-block p-3">
         <h1>BookEscape</h1>
-        <p>Key to Quality content</p>
+        <div class="list">Discover Blogs</div>
       </aside>
+    </div>
+
+    <div
+      class="loader d-none"
+      style="width: 100vw; text-align: center; height: 92vh; padding-top: 38vh"
+    >
+      <img src="/assets/Skateboarding.gif" alt="Loader GIF" />
+      <p>Loading...</p>
+    </div>
+
+    <div class="pnf-section d-none" style="width: 100%; text-align: center">
+      <img src="/assets/404-page.png" alt="404 Page" />
+      <h1>Page Not Found!</h1>
     </div>
 
     <footer class="bg-dark text-center text-white">
@@ -548,47 +1041,91 @@
     <script src="/js/common.js"></script>
 
     <script>
-      var board = location.pathname.split("/")[2];
-      var path_url = location.pathname.split("/");
+      const blog_list = document.querySelector(".blog-list");
+      var last_updated="";
 
-      // Title
-      document.head.appendChild(document.createElement("title"));
-      document.querySelector("title").textContent =
-        path_url[2].toUpperCase() + " Textbook Solutions";
+      document
+        .querySelector(".load-more")
+        .addEventListener("click", (event) => {
+          const blog_title_list=document.querySelectorAll(".blog-title")
+          const last_updated_blog_title = blog_title_list[blog_title_list.length-1].innerHTML
+        
+          get_blogs(last_updated_blog_title)
 
-      if (board == "gseb" || board == "ncert") {
-        const content_div = document.querySelector(".content");
+          event.preventDefault();
+        });
 
-        document.querySelector(
-          "main h1"
-        ).innerHTML += `Free ${board.toUpperCase()} Textbook Solutions for Class 9-10`;
-      } else {
-        document.querySelector(".main-container").classList.add("d-none");
-        document.querySelector(".pnf-section").classList.remove("d-none");
-      }
+      get_blogs = async (last_updated_title) => {
+        if (last_updated=="") {
+          await db.collection("Blogs").where("blog-title","==",last_updated_title).get().then((temp_data)=>{
+            temp_data.forEach((last_updated_blog)=>{
+              last_updated=last_updated_blog
+            })
+          })  
+        }
 
-      // Tags Start
-      const metaKeywords = [];
+          var temp_data = [];
 
-      metaKeywords.push(
-        path_url[2].toUpperCase() + " Textbook Solutions",
+          try {
+            await db
+              .collection("Blogs")
+              .orderBy("timestamp", "desc")
+              .startAfter(last_updated)
+              .limit("10")
+              .get()
+              .then((blogs) => {
+                blogs.forEach((data) => {
+                  temp_data.push(data.data());
+                });
 
-        "Book Escape NCERT Solutions",
+                last_updated = blogs.last_updated =
+                  blogs.docs[blogs.docs.length - 1];
 
-        "BookEscape NCERT Solutions"
-      );
+                write_content(temp_data);
+              });
+          } catch (error) {
+            alert(
+              "This is the maximum number of blogs we could bring for you. Visit Again in a few days to read new freshly created content."
+            );
 
-      // Create a meta tag element.
-      const metaKeywordsElement = document.createElement("meta");
+            console.log(error);          
+        }
 
-      // Set the meta tag's name and content attributes.
-      metaKeywordsElement.name = "keywords";
-      metaKeywordsElement.content = metaKeywords.join(", ");
+        handle_loader();
+      };
 
-      // Add the meta tag element to the document's head.
-      document.head.appendChild(metaKeywordsElement);
+      get_blogs();
 
-      // Tags End
+      write_content = (data) => {
+        data.forEach((temp_data) => {
+          blog_list.innerHTML += `<div
+                  class="card mx-4 mb-5 col-10 col-md-10 col-lg-5 text-center p-3 justify-content-center"
+                  style="background-color: var(--30-color)"
+                >
+                  <a href="blogs/${temp_data["title"]
+                    .toLowerCase()
+                    .replace(/ /g, "-")}"><img class="card-img-top" src="${
+            temp_data.thumbnail
+          }" alt="${temp_data["title"]}" /></a>
+                  <div class="card-body">
+                    <h5 class="card-title">${temp_data["blog-title"]}</h5>
+                    <p class="card-text">
+                      ${temp_data["description"]}
+                    </p><p class="card-footer small" style="text-align: end">Modified by Harshil Patel <br> - ${new Date(
+                      temp_data.timestamp
+                    )
+                      .toDateString()
+                      .substring(4, 25)}</p>
+                    <a style="background-color: var(--10-color)" href="blogs/${temp_data[
+                      "title"
+                    ]
+                      .toLowerCase()
+                      .replace(/ /g, "-")}" class="btn">Read More</a>
+                    
+                  </div>
+                </div>`;
+        });
+      };
     </script>
   </body>
 </html>

@@ -24,7 +24,21 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
+    <title>
+      <% if (data["book_name"]) { %>
+        <%= board.toUpperCase() + " Textbook Solutions For Class " +
+            grade.split("class-").pop() +
+            " " +
+            subject[0].toUpperCase()+subject.slice(1) +
+            " : " +
+            data["book_name"] %>
+      <% } else{ %>
+          <%= board.toUpperCase() + " Textbook Solutions For Class " +
+            grade.split("class-").pop() +
+            " " +
+            subject[0].toUpperCase()+subject.slice(1) %>
+        <% } %>
+    </title>
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
 
     <link
@@ -33,8 +47,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/styles/common.css" />
-    <link rel="stylesheet" href="/styles/about.css" />
+    <link rel="stylesheet" href="../../../../styles/common.css" />
 
     <style>
       .content * {
@@ -91,14 +104,14 @@
           >
             <ul class="navbar-nav m-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link =" aria-current="page" href="/">Home</a>
+                <a class="nav-link" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/about-us">About</a>
+                <a class="nav-link" href="/about-us">About</a>
               </li>
               <li class="nav-item dropdown main-dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link active dropdown-toggle"
                   role="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="outside"
@@ -295,53 +308,33 @@
     </header>
 
     <div class="main-container p-3 row justify-content-around">
+      <h6 class="p-2 px-lg-5 px-md-4 pb-3">
+        <% if (data["book_name"]) { %>
+            <p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href=<%= "/tb-solutions/" +board %> > <%= board.toUpperCase() %></a> > <a class="link-underline-opacity-0-hover" href=<%= "/tb-solutions/" +board +"/"+grade  %>>Class <%= grade.split("class-").pop() %></a> > <%= subject[0].toUpperCase()+subject.slice(1) %> : <%= data["book_name"] %></p>
+        <% } else{ %>
+            <p style="color: var(--basic-f-color)"><a class="link-underline-opacity-0-hover">Textbook Solutions<a> > <a class="link-underline-opacity-0-hover" href=<%= "/tb-solutions/" +board %> > <%= board.toUpperCase() %></a> > <a class="link-underline-opacity-0-hover" href=<%= "/tb-solutions/" +board +"/"+grade  %>>Class <%= grade.split("class-").pop() %></a> > <%= subject[0].toUpperCase()+subject.slice(1) %> </p>
+          <% } %>
+      </h6>
+
+
       <main class="shadow p-3 p-md-5 p-lg-5 col-lg-8">
         <div class="content">
-          <section class="container">
-            <h1 class="text-center mb-4">About Us</h1>
-            <p class="text-center">
-              Your Website Name is your one-stop solution for all your NCERT
-              textbook needs. We're dedicated to providing high-quality,
-              accurate, and easy-to-understand solutions to help students excel
-              in their studies.
-            </p>
+          <h1 class="text-center mb-4">
+            <% if (data["book_name"]) { %>
+                <%= board.toUpperCase() +" Textbook Solutions For Class " + grade.split("class-").pop() + " " %>
+                <br>
+                <%= subject[0].toUpperCase()+subject.slice(1) + " : " + data["book_name"] %>
+            <% } else { %>
+              <%= board.toUpperCase() +" Textbook Solutions For Class " + grade.split("class-").pop() + " " + subject[0].toUpperCase()+subject.slice(1) %>
+            <% } %>
+          </h1>
 
-            <div class="row mt-5">
-              <div class="col-md-6">
-                <h2 class="text-center">Our Mission</h2>
-                <p>
-                  Our mission is to empower students by providing them with the
-                  tools they need to succeed. We strive to:
-                </p>
-                <ul>
-                  <li>Simplify Complex Concepts</li>
-                  <li>Enhance Understanding</li>
-                  <li>Save Time and Effort</li>
-                  <li>Improve Academic Performance</li>
-                </ul>
-              </div>
-              <div class="col-md-6">
-                <h2 class="text-center">Our Team</h2>
-                <p>
-                  Our team comprises experienced educators, subject matter
-                  experts, and passionate individuals who are committed to
-                  providing the best possible learning experience.
-                </p>
-              </div>
-            </div>
-
-            <div class="row mt-5">
-              <div class="col-12 text-center">
-                <h2 class="text-center">Our Commitment</h2>
-                <p class="">
-                  We are committed to providing a user-friendly platform that
-                  offers a seamless learning experience. Our website is designed
-                  to be easy to navigate, with clear and concise solutions that
-                  are easy to follow.
-                </p>
-              </div>
-            </div>
-          </section>
+          <% _list.forEach(element => { %>
+            <a href="<%= "/tb-solutions/"+board + "/"+grade+"/"+subject+"/ch-"+element.split("chapter").pop()+"-"+data[element].name.toLowerCase()
+            .replace(/ /g, "-") %>"><h5>
+              <%= "Chapter "+element.split("chapter").pop() + " : " + data[element].name %>
+            </h5></a>
+           <% }); %>
         </div>
       </main>
 
@@ -543,8 +536,137 @@
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
-    <script src="/js/firebase.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="../../../../js/firebase.js"></script>
+    <script src="../../../../js/common.js"></script>
+    <script>
+      let path_url = location.pathname.split("/");
+
+      async function write_content() {
+        var data = await get_data();
+        const content_div = document.querySelector(".content");
+
+        // console.log(path_url[2]);
+        // console.log(data["GSEB"]["grade" + path_url[2].split("class")[1]]);
+
+        // Title
+        // if (
+        //   data[path_url[2].toUpperCase()][
+        //     "grade" + path_url[3].split("class-")[1]
+        //   ][path_url[4]]["book_name"]
+        // ) {
+        //   document.head.appendChild(document.createElement("title"));
+        //   document.querySelector("title").textContent =
+        //     path_url[2].toUpperCase() +
+        //     " Textbook Solutions For Class " +
+        //     path_url[3].split("class-").pop() +
+        //     " " +
+        //     capitalizeFirstLetter(path_url[4]) +
+        //     " : " +
+        //     data[path_url[2].toUpperCase()][
+        //       "grade" + path_url[3].split("class-")[1]
+        //     ][path_url[4]]["book_name"];
+        // } else {
+        //   document.head.appendChild(document.createElement("title"));
+        //   document.querySelector("title").textContent =
+        //     path_url[2].toUpperCase() +
+        //     " Textbook Solutions For Class " +
+        //     path_url[3].split("class-").pop() +
+        //     " " +
+        //     capitalizeFirstLetter(path_url[4]);
+        // }
+
+        const metaDescriptionElement = document.createElement("meta");
+
+        var metaDescription = "";
+
+        if (
+          data[path_url[2].toUpperCase()][
+            "grade" + path_url[3].split("class-")[1]
+          ][path_url[4]]["book_name"]
+        ) {
+          metaDescription =
+            "Find a detailed solution to " +
+            path_url[2].toUpperCase() +
+            " Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " : " +
+            data[path_url[2].toUpperCase()][
+              "grade" + path_url[3].split("class-")[1]
+            ][path_url[4]]["book_name"] +
+            " on BookEscape.";
+        } else {
+          metaDescription =
+            "Find a detailed solution to " +
+            path_url[2].toUpperCase() +
+            " Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]) +
+            " on BookEscape.";
+        }
+
+        metaDescriptionElement.name = "description";
+        metaDescriptionElement.content = metaDescription;
+
+        document.head.appendChild(metaDescriptionElement);
+
+        // Tags Start
+        const metaKeywords = [];
+
+        metaKeywords.push(
+          "BookEscape " +
+            path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]),
+
+          path_url[2].toUpperCase() +
+            " Textbook Solutions For Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4]),
+
+          "NCERT Class " + path_url[3].split("class-").pop(),
+
+          "Class " + path_url[3].split("class-").pop(),
+
+          "Class " +
+            path_url[3].split("class-").pop() +
+            " " +
+            capitalizeFirstLetter(path_url[4])
+        );
+
+        // Create a meta tag element.
+        const metaKeywordsElement = document.createElement("meta");
+
+        // Set the meta tag's name and content attributes.
+        metaKeywordsElement.name = "keywords";
+        metaKeywordsElement.content = metaKeywords.join(", ");
+
+        // Add the meta tag element to the document's head.
+        document.head.appendChild(metaKeywordsElement);
+
+        var new_data = [];
+
+        for (var temp_data in data[path_url[2].toUpperCase()][
+          "grade" + path_url[3].split("class-")[1]
+        ][path_url[4]]) {
+          if (temp_data != "book_name") {
+            new_data.push(temp_data);
+          }
+        }
+
+        new_data.sort(function (a, b) {
+          return a.split("r")[1] - b.split("r")[1];
+        });   
+      }
+
+      write_content();
+    </script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

@@ -35,7 +35,11 @@ get_data = async () => {
         // console.log(data.data())
       });
 
-      handle_loader();
+      try {
+        handle_loader();
+      } catch (error) {
+        console.error(error);
+      }
 
       // console.log(board_data);
     });
